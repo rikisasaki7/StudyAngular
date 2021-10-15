@@ -1,0 +1,82 @@
+<h1>第３章！</h1>
+<h1>Hello {{name}}</h1>
+<div>
+○Interpolation<br />
+{{member?.name}}, {{member?.age}}, {{member?.tmp}}
+</div>
+
+○プロパティバインディング<br />
+<img [src]="image" />
+<img bind-src="image" />
+<img src="{{image}}" />
+
+<br />
+○HTML文字列のバインド<br />
+msg: {{msg}}
+<br />
+<br />
+
+○innerHTMLへのバインド
+<div [innerHTML]="msg"></div>
+<br />
+<br />
+
+○サニタイズ
+<div [innerHTML]="safeMsg"></div>
+<br />
+<br />
+
+○iframe
+<br />
+bypassSecurityTrustHtmlを通してないからエラーになる(コメントアウト)<br />
+<!-- <iframe [src]="url"></iframe> -->
+こっちはエラーにならない<br />
+<iframe [src]="safeUrl"></iframe>
+
+<br />
+<br />
+○プロパティバインディングが動作しない例(コメントアウト)
+<!--
+<table border="1">
+  <tr><td [rowspan]="len">結合</td><td>1</td><tr>
+  <tr><td>2</td></tr>
+  <tr><td>3</td></tr>
+</table>
+-->
+<br />
+<br />
+○属性バインディング<br />
+<table border="1">
+  <tr><td [attr.rowspan]="len">結合</td><td>1</td><tr>
+  <tr><td>2</td></tr>
+  <tr><td>3</td></tr>
+</table>
+
+<br />
+○クラスバインディング<br />
+<div class="line back" [class]="clazz">WINGS プロジェクト</div>
+<div class="line back" [class.fore]="flag">WINGS プロジェクト2</div>
+<br />
+
+○スタイルバインディング
+<div [style.background-color]="bcolor">WINGS プロジェクト3</div>
+<div [style.background-color]="bcolorFlag ? '#0ff' : ''">WINGS プロジェクト4</div>
+<div [style.font-size.%]="size">WINGS プロジェクト5</div>
+<div [style.font-size]="sizesize">WINGS プロジェクト6</div>
+
+<br />
+<br />
+<form>
+  <label for="name">名前</label>
+  <input id="name" name="name" type="text" [(ngModel)]="myName" />
+  <div>こんにちは、{{myName}}さん</div>
+</form>
+
+<input id="name2" name="name2" type="text" [ngModel]="myName2" (input)="myName2=$event.target.value" />
+<div>こんにちは、{{myName2}}さん</div>
+
+<input id="name3" name="name3" type="text" [ngModel]="myName3" (ngModelChange)="myName3=$event" />
+<div>こんにちは、{{myName3}}さん</div>
+
+<input id="name4" name="name4" type="text" [ngModel]="myName4" (ngModelChange)="myName4=$event.toUpperCase()" />
+<div>こんにちは、{{myName4}}さん</div>
