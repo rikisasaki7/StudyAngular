@@ -141,4 +141,110 @@
   <div>{{article.body}}</div>
   <footer ng-repeat-end>({{article.author}})</footer>
 </ng-container>
-<!--test-->
+
+<ul>
+  <li *ngFor="let b of bookstrc">{{b.title}} ({{b.isbn}})</li>
+</ul>
+<input type="button" (click)="onclick()" value="更新">
+
+<ul>
+  <li *ngFor="let b of bookstrc; trackBy: trackFn">{{b.title}} ({{b.isbn}})</li>
+</ul>
+<input type="button" (click)="onclick()" value="更新">
+
+<table class="table">
+  <tr>
+    <th>ISBNコード</th><th>書名</th><th>価格</th><th>出版社</th>
+  </tr>  
+  <tr *ngFor="let b of books | slice: start: start+len">
+    <td>{{b.isbn}}</td>
+    <td>{{b.title}}</td>
+    <td>{{b.price}}</td>
+    <td>{{b.publisher}}</td>
+  </tr>
+</table>
+<ul class="pagenation">
+  <li><a href="#" (click)="pager(0)">1</a></li>
+  <li><a href="#" (click)="pager(1)">2</a></li>
+  <li><a href="#" (click)="pager(2)">3</a></li>
+</ul>
+
+<div [ngStyle]="styleAAA">
+  <p>WINGS プロジェクトは、ライター</p>
+</div>
+
+<input type="button" (click)="back=!back" value="背景色">
+<input type="button" (click)="fore=!fore" value="前景色">
+<input type="button" (click)="space=!space" value="余白">
+<div [ngStyle]="stylesGet">
+  <p>WINGSプロジェクト、、、プロジェクト</p>
+</div>
+
+<form>
+  <input type="button" (click)="stylesBool.back=!stylesBool.back" value="背景色">
+  <input type="button" (click)="stylesBool.fore=!stylesBool.fore" value="前景色">
+  <input type="button" (click)="stylesBool.space=!stylesBool.space" value="余白">
+</form>  
+<div [ngClass]="stylesBool">
+  <p>WINGSプロジェクトああああああああああああああ</p>
+</div>
+
+<form>
+  <input type="button" (click)="flag=!flag" value="有効／無効">
+</form>
+<div [ngClass]="{'back fore space':flag}">
+  <p>WINGSプロジェクトいいいいいいいいいいいいいいいい</p>
+</div>
+
+
+<div [ngPlural]="favs2.length">
+  <ng-template ngPluralCase="=0">
+    [iine!]されていません
+  </ng-template>
+  <ng-template ngPluralCase="=1">
+    1人だけ[iine!]してます
+    {{favs2[0]}}だけがいいねだって
+  </ng-template>
+  <ng-template ngPluralCase="other">
+    {{favs2.length}}人がいいえしてまう
+  </ng-template>
+</div>
+
+<ng-template #myTemp 
+  let-isbn="isbn" 
+  let-title="title" 
+  let-price="price" 
+  let-publisher="publisher">
+  <div>
+    <img src="https://www.wings.msn.to/books/{{isbn}}/{{isbn}}.jpg" />
+    <ul>
+      <li>isbn：{{isbn}}</li>
+      <li>タイトル：{{title}}</li>
+      <li>{{publisher}}発行</li>
+      <li>定価{{price}}</li>
+    </ul>
+  </div>
+</ng-template>
+
+<!-- booksプロパティの情報をもとに選択ボックスを生成（選択値はtempに反映） -->
+<select name="temp" [(ngModel)]="temp">
+  <option *ngFor="let b of books; let i=index;" [value]="i">
+    {{b.title}}
+  </option>
+</select>
+<ng-container *ngTemplateOutlet="myTemp; context: books[temp]"></ng-container>
+
+<ng-template #impTemp
+  let-greet
+  let-name="name">
+  <div>
+    {{greet}}、{{name}}さんんんｎ
+  </div>
+</ng-template>
+<ng-container *ngTemplateOutlet="impTemp; context: helhel"></ng-container>
+
+
+<div>
+  広告バナー：<br />
+  <ng-container *ngComponentOutlet="banner"></ng-container>
+</div>
