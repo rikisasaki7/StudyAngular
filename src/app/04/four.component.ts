@@ -14,8 +14,7 @@ import { WingComponent } from './wings/wing.component';
   //   .space { padding: 15px }
   //   `]
 })
-
-export class FourComponent implements OnInit, OnDestroy{ 
+export class FourComponent implements OnInit, OnDestroy { 
 
   title: string = 'WINGS project'
   obj: any = {

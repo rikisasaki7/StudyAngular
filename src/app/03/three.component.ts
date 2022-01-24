@@ -8,7 +8,7 @@ import { DomSanitizer, SafeHtml, SafeResourceUrl } from '@angular/platform-brows
   styleUrls : ['./three.css']
 })
 
-export class ThreeComponent  { 
+export class ThreeComponent { 
   name = 'Angularaaaaa'; 
   member = {
     name: "aaaaa",
@@ -46,7 +46,6 @@ export class ThreeComponent  {
 
   size: number = 150
   sizesize: string = '200%'
-
 
   myname = '山田'
   myname2 = '山田2'

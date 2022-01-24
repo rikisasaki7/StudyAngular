@@ -9,13 +9,14 @@ import { FourComponent } from './04/four.component';
 import { EventComponent } from './04/event/event.component';
 import { BookComponent } from './04/books/books.component';
 import { WingComponent } from './04/wings/wing.component';
+import { FiveComponent } from './05/five.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, ThreeComponent, FourComponent, EventComponent, BookComponent, WingComponent ],
+  declarations: [ AppComponent, ThreeComponent, FourComponent, EventComponent, BookComponent, WingComponent, FiveComponent ],
   // bootstrap:    [ AppComponent, FourComponent ],
   // providers: [{ provide: LOCALE_ID, useValue: 'de-DE'}]
-  bootstrap:    [ AppComponent, ThreeComponent, FourComponent ],
+  bootstrap:    [ AppComponent, ThreeComponent, FourComponent, FiveComponent ],
   entryComponents: [EventComponent, BookComponent, WingComponent]
 })
 export class AppModule { }
