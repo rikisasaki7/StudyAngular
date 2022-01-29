@@ -1,0 +1,61 @@
+<!--editItem属性で書籍情報を受け取った場合にだけフォームを表示-->
+<form #myEditForm="ngForm" (ngSubmit)="onsubmit()" *ngIf="editItem">
+    <div>
+        <label for="isbn">ISBNコード</label>
+        <span id="isbn">{{editItem.isbn}}</span>
+    </div>
+
+    <!--editItem属性（選択された書籍）をもとにフォームを生成-->
+    <div>
+        <label for="title">書名：</label>
+        <input id="title" name="title" size="25" type="text"
+            [(ngModel)]="editItem.title" />
+    </div>
+
+    <div>
+        <label for="price">価格：</label>
+        <input id="price" name="price" size="5" type="number"
+            [(ngModel)]="editItem.price" />
+    </div>
+
+    <div>
+        <label for="publisher">出版社：</label>
+        <input id="publisher" name="publisher" type="text"
+            [(ngModel)]="editItem.publisher" />
+    </div>
+
+    <div>
+        <input type="submit" value="編集" />
+    </div>
+</form>
+
+<!--イベント名とプロパティ名が異なる場合-->
+<form #myEditForm="ngForm" (ngSubmit)="onsubmitChange()" *ngIf="editItem">
+    <div>
+        <label for="isbn">ISBNコード</label>
+        <span id="isbn">{{editItem.isbn}}</span>
+    </div>
+
+    <!--editItem属性（選択された書籍）をもとにフォームを生成-->
+    <div>
+        <label for="title">書名：</label>
+        <input id="title" name="title" size="25" type="text"
+            [(ngModel)]="editItem.title" />
+    </div>
+
+    <div>
+        <label for="price">価格：</label>
+        <input id="price" name="price" size="5" type="number"
+            [(ngModel)]="editItem.price" />
+    </div>
+
+    <div>
+        <label for="publisher">出版社：</label>
+        <input id="publisher" name="publisher" type="text"
+            [(ngModel)]="editItem.publisher" />
+    </div>
+
+    <div>
+        <input type="submit" value="編集" />
+    </div>
+</form>

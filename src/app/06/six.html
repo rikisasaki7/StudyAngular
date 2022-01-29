@@ -1,0 +1,35 @@
+<h1>第６章！！！ </h1>
+<div>
+    <span *ngFor="let b of books">
+        [<a href="#" (click)="onclick(b)">{{b.title}}</a>] <br />
+    </span>
+    <hr />
+    <detail-book 
+        [item]="selected">
+    </detail-book>
+<!--属性とプロパティ名が異なる場合-->    
+<!--<detail-book [data]="selected"></detail-book> -->
+</div>
+
+<!--ゲッター・セッターを使用するとこうなる-->
+<div>
+    <span *ngFor="let b of books">
+        [<a href="#" (click)="onclickAccesser(b)">{{b.title}}</a>] <br />
+    </span>
+    <hr />
+    <detail-book 
+        [pItem]="selectedAccesser">
+    </detail-book>
+<!--属性とプロパティ名が異なる場合-->    
+<!--<detail-book [data]="selected"></detail-book> -->
+</div>
+
+<hr />
+
+<!--テンプレート参照変数を使用して子コンポーネントの変数にアクセス-->
+<p>編集中の書籍：{{editChild.editItem?.title}}</p>
+<edit-book  #editChild [editItem]="selected" 
+    (edited)="onedited($event)"
+    (changeBook)="onedited($event)">
+    <!--イベント名とプロパティ名が異なる場合-->    
+</edit-book>
