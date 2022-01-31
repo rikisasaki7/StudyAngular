@@ -1,0 +1,32 @@
+<div>
+  <label>
+    表示／非表示
+    <input type="checkbox" (change)="onchange()" checked />
+  </label>
+</div>
+
+<!--showプロパティがtrueの場合にだけ子コンポーネントを表示-->
+<my-lifecycle-child [time]="current" *ngIf="show"></my-lifecycle-child>
+
+<!--@ViewChildrenで取得する子コンポーネント達-->
+<my-view-child [indexwww]="1"></my-view-child>
+<my-view-child [indexwww]="2"></my-view-child>
+<my-view-child [indexwww]="3"></my-view-child>
+<hr />
+完成：{{poems[0]}} {{poems[1]}} {{poems[2]}}
+
+
+<my-app-content>権瓶</my-app-content>
+
+<my-content-multi>
+  <span class="header">あなたもプロジェクトに参加しませんか？？</span>
+  <span class="attention">ただいま募集中</span>
+  <small>連絡先：aaaaa@aaaaa.co.jp</small>
+  <p>興味のある人はメール</p>
+  <small>たんとうああああ</small>
+</my-content-multi>
+
+
+<my-parent>
+  <my-p-child></my-p-child>
+</my-parent>
