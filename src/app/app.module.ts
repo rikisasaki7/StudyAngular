@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 import { CoopModule } from "./06/coop/coop.module";
 import { LifecycleModule } from "./06/lifecycle/lifecycle.module";
+import { StyleModule } from "./06/style/style.module";
 
 import { AppComponent } from "./app.component";
 import { ThreeComponent } from "./03/three.component";
@@ -23,6 +24,7 @@ import { SixComponent } from "./06/six.component";
     ReactiveFormsModule,
     CoopModule,
     LifecycleModule,
+    StyleModule,
   ],
   declarations: [
     AppComponent,
