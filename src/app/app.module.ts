@@ -3,6 +3,7 @@ import { NgModule, LOCALE_ID } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
+// import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { CoopModule } from "./06/coop/coop.module";
 import { LifecycleModule } from "./06/lifecycle/lifecycle.module";
@@ -25,6 +26,7 @@ import { SixComponent } from "./06/six.component";
     CoopModule,
     LifecycleModule,
     StyleModule,
+    // BrowserAnimationsModule,
   ],
   declarations: [
     AppComponent,
